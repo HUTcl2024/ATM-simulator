@@ -33,73 +33,48 @@
 | `transactions.csv` | 可用 Excel 打开，查看所有交易流水 |
 | `transactions.json` | 程序自动读取的历史数据文件 |
 
-### 📘 JSON 示例
-```json
-{
-  "balance_cents": 12345,
-  "transactions": [
-    {"type":1,"amount":10000,"balance_after":10000,"timestamp":1700000000},
-    {"type":2,"amount":5000,"balance_after":5000,"timestamp":1700003600}
-  ]
-}
-🧠 技术亮点
-⚙️ 使用结构体保存交易记录
+✨ Features | 功能特性
+功能	说明
+💰 存款 / Deposit	输入金额（支持两位小数，如 100.50）
+💸 取款 / Withdraw	自动检测余额是否足够
+📜 交易记录 / Transactions	查看所有交易记录（含时间戳与余额）
+🧮 查看余额 / Balance	显示当前账户余额
+💾 数据持久化 / Persistence	自动保存至 transactions.csv 与 transactions.json
+🔁 自动加载 / Auto Load	启动时自动恢复上次交易记录与余额
+🗂️ Data Files | 数据文件示例
 
-📆 时间戳由 time() 自动生成
+程序运行后会自动生成以下文件：
 
-💾 纯标准 C 实现 JSON 与 CSV 文件读写
+文件名	描述
+transactions.csv	可用 Excel 打开，查看所有交易流水
+transactions.json	程序自动读取的历史数据文件
+🧰 How to Use | 使用方法
+🧩 编译 (Compile)
 
-🪙 金额以“分”为单位存储，避免浮点误差
+在 PowerShell / CMD 中执行以下命令：
 
-🚫 无第三方依赖，跨平台兼容（Windows / Linux / macOS）
-
-🧰 使用方法
-🧩 编译
-在 PowerShell / CMD 中执行：
-
-bash
-复制代码
 cd "D:\pycharm\ATM simulator"
 gcc -std=c11 -Wall -Wextra -O2 -mconsole atm.c -o atm.exe
-▶️ 运行
-bash
-复制代码
+
+▶️ 运行程序 (Run)
+
+编译完成后输入：
+
 .\atm.exe
-📋 菜单示例
-markdown
-复制代码
+
+
+终端将显示菜单：
+
 ==============================
           ATM MENU
 ==============================
+
 1) Deposit
 2) Withdraw
 3) View transactions
 4) View balance
 0) Exit
 Select an option:
-🖼️ 示例截图
-（你可以替换为自己的截图 👇）
-
-启动界面	查看交易记录
-
-📦 项目结构
-bash
-复制代码
-ATM-simulator/
-│
-├── atm.c                 # 主程序源代码
-├── transactions.csv      # 交易记录（自动生成）
-├── transactions.json     # 历史记录（自动生成）
-├── README.md             # 项目说明文件
-└── .vscode/              # VS Code 配置（可选）
-📖 后续计划
- 多账户支持 + 登录 PIN
-
- 导出为 .xlsx（Excel 文件）
-
- 图形化界面（GTK / Qt）
-
- 网络同步版本
 
 📜 开源许可
 本项目采用 MIT License 开源协议，欢迎学习、修改与分发。
