@@ -105,7 +105,3 @@ ATM-simulator/
 本项目采用 MIT License 开源协议，欢迎学习、修改与分发。
 
 💡 若你喜欢本项目，请点亮右上角的 ⭐Star 支持一下！
-
-👤 作者信息
-作者：陈雷（@HUTcl2024）
-项目地址：https://github.com/HUTcl2024/ATM-simulator
